@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import CurrencyToBeConverted from "./CurrencyToBeConverted";
+import CurrencyTarget from "./CurrencyTarget";
+import ConvertBtn from "./ConvertBtn";
 
 class UserInput extends Component {
   render() {
@@ -16,60 +19,11 @@ class UserInput extends Component {
           id="inlineFormInputName2"
           placeholder="Value"
         />
-        <div className="dropdown">
-          <a
-            className="btn btn-secondary dropdown-toggle"
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Dropdown link
-          </a>
 
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a className="dropdown-item" href=".com">
-              Action
-            </a>
-            <a className="dropdown-item" href="hsshs.com">
-              Another action
-            </a>
-            <a className="dropdown-item" href="ksksksks/cp,">
-              Something else here
-            </a>
-          </div>
-        </div>
+        <CurrencyToBeConverted />
         <h3>to </h3>
-        <div className="dropdown">
-          <a
-            className="btn btn-secondary dropdown-toggle"
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Dropdown link
-          </a>
-
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a className="dropdown-item" href=".com">
-              Action
-            </a>
-            <a className="dropdown-item" href="hsshs.com">
-              Another action
-            </a>
-            <a className="dropdown-item" href="ksksksks/cp,">
-              Something else here
-            </a>
-          </div>
-        </div>
-        <button type="button" className="btn btn-secondary btn-lg">
-          Large button
-        </button>
+        <CurrencyTarget />
+        <ConvertBtn />
       </form>
     );
   }
