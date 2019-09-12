@@ -4,10 +4,10 @@ class CurrencyToBeConverted extends Component {
   constructor() {
     super();
     this.state = {
-      currency: ['hello']
+      currency: []
     };
   }
-  componentDidMount() {
+  componentWillMount() {
     fetch(
       `https://free.currconv.com/api/v7/currencies?apiKey=aeb9658f5350c2c7473d`
     )
@@ -15,29 +15,22 @@ class CurrencyToBeConverted extends Component {
 
       .then(data => {
         this.setState({
-          currency: data.results
+          currency: Object.keys(data.results)
         });
         // var datas = data.results.map(x => x )
-        console.log(data)
-    });
+        // console.log(data);
+        // console.log(Object.keys(data.results));
+      });
   }
-  render() {
-    // console.log("this is deee", data);
-    return (
-      <div className="dropdown">
-        <a
-          className="btn btn-secondary dropdown-toggle"
-          href="#"
-          role="button"
-          id="dropdownMenuLink"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          // aria-expanded="true"
-        ></a>
 
-        {this.state.currency}
-      </div>
-    );
+  render() {
+    let getting = this.state.currency;
+    if (getting) {
+      console.log(getting);
+      return getting.map(x => <a href={this.state.currency}> {x}</a>);
+    } else {
+      return "heyhp";
+    }
   }
 }
 
