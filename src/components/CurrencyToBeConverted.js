@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-
+import { Dropdown } from "react-bootstrap";
 class CurrencyToBeConverted extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currency: []
-    };
-  }
+  state = {
+    currency: []
+  };
+
   componentWillMount() {
     fetch(
       `https://free.currconv.com/api/v7/currencies?apiKey=aeb9658f5350c2c7473d`
@@ -26,8 +24,20 @@ class CurrencyToBeConverted extends Component {
   render() {
     let getting = this.state.currency;
     if (getting) {
-      console.log(getting);
-      return getting.map(x => <a href={this.state.currency}> {x}</a>);
+      // console.log(getting);
+      return (
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Select country
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            {getting.map(x => (
+              <Dropdown.Item href="#/action-1">{x}</Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
+      );
     } else {
       return "heyhp";
     }
