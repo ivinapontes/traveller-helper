@@ -42,3 +42,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 https://currencylayer.com/
 https://free.currencyconverterapi.com/
 https://openexchangerates.org/
+
+
+
+#### Todo: 
+- Create a new component for the home page and one just for the UserInput :checkmark:
+- clean up the code and start 
+- change the second Dropdown menu!
+- Make it work :heart:

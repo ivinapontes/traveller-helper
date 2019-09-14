@@ -3,7 +3,7 @@ import CurrencyToBeConverted from "./CurrencyToBeConverted";
 import CurrencyTarget from "./CurrencyTarget";
 import ConvertBtn from "./ConvertBtn";
 
-import { FormControl, InputGroup, Spinner } from "react-bootstrap";
+import { FormControl, InputGroup, Spinner, Dropdown } from "react-bootstrap";
 class UserInput extends Component {
   constructor(props) {
     super(props);
@@ -42,3 +42,4 @@ class UserInput extends Component {
 }
 
 export default UserInput;
+
