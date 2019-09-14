@@ -3,28 +3,40 @@ import CurrencyToBeConverted from "./CurrencyToBeConverted";
 import CurrencyTarget from "./CurrencyTarget";
 import ConvertBtn from "./ConvertBtn";
 
+import { FormControl, InputGroup, Spinner } from "react-bootstrap";
 class UserInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "hello"
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      value: 55
+    });
+  }
+
   render() {
     return (
-      <form className="form-inline">
-        <label
-          for="colFormLabelLg"
-          className="col-sm-2 col-form-label col-form-label-lg"
-        >
-          Value
-        </label>
-        <input
-          type="text"
-          className="form-control mb-2 mr-sm-2"
-          id="inlineFormInputName2"
-          placeholder="Value"
-        />
-
+      <div>
+        Count: {this.state.value}
+        {/* <Spinner animation="border" variant="warning" /> */}
+        <InputGroup className="mb-3">
+          <InputGroup.Prepend>
+            <InputGroup.Text>$</InputGroup.Text>
+          </InputGroup.Prepend>
+          <FormControl aria-label="Amount (to the nearest dollar)" />
+          <InputGroup.Append>
+            <InputGroup.Text>.00</InputGroup.Text>
+          </InputGroup.Append>
+        </InputGroup>
         <CurrencyToBeConverted />
         <h3>to </h3>
         <CurrencyTarget />
         <ConvertBtn />
-      </form>
+      </div>
     );
   }
 }
