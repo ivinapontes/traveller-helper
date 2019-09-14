@@ -33,7 +33,7 @@ class UserInput extends Component {
           </InputGroup.Append>
         </InputGroup>
         <CurrencyToBeConverted />
-        <h3>to </h3>
+        <h3> to </h3>
         <CurrencyTarget />
         <ConvertBtn />
       </div>
