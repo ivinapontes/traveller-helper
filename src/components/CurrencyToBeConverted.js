@@ -6,37 +6,37 @@ class CurrencyToBeConverted extends Component {
   };
 
   componentDidMount() {
-    fetch(
-      `https://free.currconv.com/api/v7/currencies?apiKey=aeb9658f5350c2c7473d`
-    )
+    fetch(`https://api.frankfurter.app/currencies`)
       .then(res => res.json())
-
-      .then(data => {
+      
+      .then(res => {
         this.setState({
-          currency: Object.keys(data.results)
+          currency: Object.keys(res)
         });
-        // var datas = data.results.map(x => x )
-        // console.log(data);
-        // console.log(Object.keys(data.results));
-      });
+      })
   }
+  
 
   render() {
-    let getting = this.state.currency;
-    if (getting) {
-      console.log(getting);
+    let currencies = this.state.currency;
+    console.log(this.state.currency.base)
+    
+    if (currencies) {
+      
       return (
         <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             Select country
           </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-            {getting.map(x => (
+          <Dropdown.Menu variant="success" id="dropdown-basic" onClick={console.log(this.state.currency)}>
+            {currencies.map(x => (
               <Dropdown.Item href="#/action-1">{x}</Dropdown.Item>
             ))}
           </Dropdown.Menu>
-        </Dropdown>
+         
+          </Dropdown>
+     
       );
     } else {
       return "heyhp";
